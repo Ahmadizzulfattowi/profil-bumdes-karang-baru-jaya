@@ -1,0 +1,43 @@
+type BUMDesProfile @table {
+  name: String!
+  establishedYear: Int!
+  mission: String!
+  address: String!
+  vision: String
+  contactEmail: String
+  contactPhone: String
+  logoUrl: String
+}
+
+type Business @table {
+  name: String!
+  description: String!
+  type: String
+  contactPerson: String
+  contactNumber: String
+  bumdesProfile: BUMDesProfile
+}
+
+type Product @table {
+  name: String!
+  description: String!
+  price: Float!
+  imageUrl: String
+  isFeatured: Boolean
+  business: Business
+}
+
+type User @table {
+  username: String!
+  passwordHash: String!
+  role: String!
+  email: String
+  lastLogin: Timestamp
+}
+
+type AdminLog @table {
+  action: String!
+  timestamp: Timestamp!
+  details: String
+  user: User
+}

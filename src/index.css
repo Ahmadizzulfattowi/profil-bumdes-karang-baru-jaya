@@ -5,3 +5,46 @@
 
 /* Fallback styles for when Tailwind isn't installed */
 body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; padding:0; }
+/* Contoh jika Anda bisa menargetkan elemen di file CSS/Styled-Components */
+.NavItemClass:hover {
+  color: yellow; /* Ganti dengan warna saat di-hover */
+}
+/* Tambahkan kode ini ke file CSS global Anda (misalnya index.css) */
+.hide-scrollbar {
+  /* Untuk Internet Explorer dan Edge */
+  -ms-overflow-style: none;
+  /* Untuk Firefox */
+  scrollbar-width: none;
+}
+
+/* Untuk Chrome, Safari, dan Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Tambahkan kode CSS ini ke file CSS global Anda (misalnya index.css) */
+
+/* Definisi animasi pergerakan */
+@keyframes marquee-scroll {
+  /* Dimulai dari posisi 0 */
+  from {
+    transform: translateX(0);
+  }
+  /* Berakhir di -50% dari total lebar konten (karena kita menduplikasinya dua kali) */
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Terapkan animasi pada container pengurus */
+.marquee {
+  /* Set lebar minimum untuk menampung dua set data pengurus agar animasi terlihat mulus */
+  min-width: 200%; 
+  
+  /* Terapkan animasi */
+  animation: marquee-scroll 60s linear infinite; /* 60s: durasi yang sangat lambat; linear: kecepatan konstan; infinite: looping tak terputus */
+}
+
+/* Jika Anda ingin animasi berhenti saat mouse di-hover (opsional) */
+.marquee:hover {
+    animation-play-state: paused;
+}
