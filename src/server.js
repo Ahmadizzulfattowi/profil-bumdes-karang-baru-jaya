@@ -40,7 +40,7 @@ db.connect((err) => {
   console.log("Terhubung ke database MySQL sebagai id", db.threadId);
 });
 
-API_URL=https://bumdes-karang-baru-jaya.vercel.app
+const API_URL="https://bumdes-karang-baru-jaya.vercel.app";
 const SALT_ROUNDS = 10; 
 
 // --- Konfigurasi File Upload ---
@@ -668,6 +668,7 @@ app.get("/api/news", (req, res) => {
 });
 
 // --- START SERVER ---
+
 
 
 
