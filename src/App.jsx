@@ -8,7 +8,7 @@ import AdminDashboard from "./components/admin/AdminDashboard";
 import PublicHomePage from "./components/public/PublicHomePage";
 
 // URL dasar server Express kamu
-const API_URL = "http://localhost:3001";
+const API_URL = "https://bumdes-karang-baru-jaya.vercel.app";
 
 function App() {
   const [products, setProducts] = useState([]);
