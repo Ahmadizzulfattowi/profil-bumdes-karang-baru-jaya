@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import InputField from "../fields/InputField";
 
-const API_URL = "http://localhost:3001";
+const API_URL = "https://bumdes-karang-baru-jaya.vercel.app";
 
 const AdminLogin = ({ setIsAdminLoggedIn, setPage, setAdminUser }) => {
   const [username, setUsername] = useState("");
