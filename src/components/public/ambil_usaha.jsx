@@ -4,7 +4,7 @@ export default function ProfilBumdes() {
   const [profil, setProfil] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost/backend/ambil_profil.php")
+    fetch("https://bumdes-karang-baru-jaya.vercel.app")
       .then((res) => res.json())
       .then((data) => setProfil(data))
       .catch((err) => console.error(err));
