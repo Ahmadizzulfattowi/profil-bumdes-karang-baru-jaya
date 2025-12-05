@@ -1,12 +1,14 @@
 // server.js (LENGKAP DAN TERBARU)
 
 import express from "express";
-import mysql from "mysql";
+import mysql2 from "mysql";
 import cors from "cors";
 import multer from "multer";
 import path from "path";
 import fs from "fs";
 import bcrypt from "bcrypt"; 
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
 app.use(cors());
@@ -14,12 +16,21 @@ app.use(express.json());
 
 // --- Konfigurasi Database (WAJIB DIUBAH) ---
 
-const db = mysql.createConnection({
-  host: "localhost",
-  user: "root", // <--- Ganti dengan user database Anda
-  password: "", // <--- Ganti dengan password database Anda
-  database: "bumdes_karang_baru", // Pastikan nama database sudah benar
+
+const db = mysql.createPool({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT,
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0,
+  ssl: {
+    rejectUnauthorized: false
+  }
 });
+
 
 db.connect((err) => {
   if (err) {
@@ -657,4 +668,5 @@ app.get("/api/news", (req, res) => {
 });
 
 // --- START SERVER ---
+
 
