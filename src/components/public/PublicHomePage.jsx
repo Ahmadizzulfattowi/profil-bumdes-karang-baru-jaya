@@ -194,7 +194,7 @@ const PublicHomePage = ({ products, pengurus, profil, news, setPage, getImageUrl
         </div>
         <p className="mt-4 text-xs text-gray-500">
           &copy; {new Date().getFullYear()}{" "}
-          {profil.nama_bumdes || "BUMDes Karang Baru"}. Semua Hak Dilindungi.
+          {profil.nama_bumdes || "BUMDes Karang Baru Jaya"}. Semua Hak Dilindungi.
         </p>
       </footer>
     </div>
