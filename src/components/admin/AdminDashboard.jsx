@@ -7,7 +7,7 @@ import PengurusEditor from "./PengurusEditor";
 import ProductEditor from "./ProductEditor";
 import NewsEditor from "./NewsEditor"; // ⭐ IMPORT KOMPONEN EDITOR BARU
 
-const API_URL = "http://localhost:3001";
+const API_URL = "https://bumdes-karang-baru-jaya.vercel.app";
 
 const AdminDashboard = ({
   products,
