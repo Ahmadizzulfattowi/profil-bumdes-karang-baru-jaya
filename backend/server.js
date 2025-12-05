@@ -1,7 +1,7 @@
 // server.js (LENGKAP DAN TERBARU)
 
 import express from "express";
-import mysql from "mysql";
+import mysql from "mysql2";
 import cors from "cors";
 import multer from "multer";
 import path from "path";
@@ -14,11 +14,18 @@ app.use(express.json());
 
 // --- Konfigurasi Database (WAJIB DIUBAH) ---
 
-const db = mysql.createConnection({
-  host: "localhost",
-  user: "root", // <--- Ganti dengan user database Anda
-  password: "", // <--- Ganti dengan password database Anda
-  database: "bumdes_karang_baru", // Pastikan nama database sudah benar
+const db = mysql.createPool({
+  host: "interchange.proxy.rlwy.net",
+  user: "root",
+  password: "PkiaByqgdjfSjwKubeyKFVMHknfdzhGs",
+  database: "railway",
+  port: 52955,
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0,
+  ssl: {
+    rejectUnauthorized: false
+  }
 });
 
 db.connect((err) => {
